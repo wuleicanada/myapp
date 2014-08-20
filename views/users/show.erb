@@ -1,0 +1,8 @@
+<%= form('/users/' + @user.id.to_s, :put) %>
+<div>First Name: <%= input(:user, :firstname, :value=>h(@user.firstname), :size=>20)%></div>
+<div>Last Name: <%= input(:user, :lastname, :value=>h(@user.lastname), :size=>20)%></div>
+<div>Email: <%= input(:user, :email, :value=>h(@user.email), :size=>40, :disabled=>:disabled)%></div>
+<div><%= checkbox(:user, :consent, '1', :label=> false) %></span> Yes! I accept the term of service.</div>
+<button type="submit" class="btn btn-default">Submit</button>
+<input type="hidden" name="uid" value="<%= h @user.id%>" />
+</form>
